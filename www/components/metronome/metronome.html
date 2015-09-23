@@ -1,19 +1,19 @@
-<ion-view view-title="Métronome">
+<ion-view view-title="Métronome" ng-controller="metroController as metroCtrl">
  	<ion-content padding="true" class="has-header">
-        <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; width: 100%; height: auto; background-color: rgb(255, 255, 255);">
-            <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
-        </div>
+        
+            <gc-metronome></gc-metronome>
+        
         <form>
             <ion-item class="range range-positive">Tempo
-                <input type="range" value="90" min="0" max="200" name="tempo">
+                <input type="range" value="90" min="0" max="200" name="tempo" ng-model="metroCtrl.tempo">{{metroCtrl.tempo}}
             </ion-item>
             <label class="item item-select" name="Note">
                 <span class="input-label">Note</span>
-                <select></select>
+                <select ng-model="metroCtrl.note" ng-options="note for note in metroCtrl.listeMesure" ></select>
             </label>
             <label class="item item-select" name="mesure">
                 <span class="input-label">Mesure</span>
-                <select></select>
+                    <select ng-model="metroCtrl.mesure" ng-options="note for note in metroCtrl.listeMesure" ></select>
             </label>
         </form>
         <button class="button  button-icon button-block button-large icon-left ion-play button-full">Groove !</button>

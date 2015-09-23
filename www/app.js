@@ -4,7 +4,10 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in is_char(character)             ndex.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('gcApp', ['ionic'])
+angular.module('gcApp', [
+  'ionic',
+  'gc.metronome'
+])
 
 .run(function ($ionicPlatform) {
 
